@@ -1,0 +1,169 @@
+button{
+    cursor: pointer;
+}
+.Gripper_container{
+    width:fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 9vh;
+    border-radius: 13px;
+    padding: 20px;
+}
+
+/* |||||||||||||||||||||||||||||||| */
+
+
+.Doctor_card{
+    background-color: rgb(255 255 255 / 0%);
+    width: 100%;
+    height: fit-content;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d3d3d5;
+    transition: 0.3s;
+}
+.Doctor_card:hover{
+    background-color: #f1f1f5;
+}
+.doc_IMG{
+    background-color: rgb(236, 236, 236);
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.doc_IMG img{
+    width: 100%;
+    height: -webkit-fill-available;
+}
+.doc_DIS{
+    width: 400px;
+    height: fit-content;
+}
+
+.doc_DIS h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+.doc_DIS h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #137983;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+
+.doc_DIS h4{
+    font-size: 15px;
+    font-weight: 500;
+    color: #137983;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.doc_DIS p{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #686868;
+}
+.speciality_badge{
+    border-top: 1px solid #d8d8dd;
+    border-bottom: 1px solid #d8d8dd;
+    padding: 8px 0px 8px 0px;
+    margin-top: 11px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+.speciality_badge span{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #686868;
+    margin-bottom: 2px;
+}
+.speciality_badge p{
+    background-color: #22a6b3;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 0px 14px 3px 14px;
+}
+.speciality_badge p span{
+    color: #fff !important;
+    font-size: 10px;
+}
+
+.fstBtns{
+    background-color: #22a6b3;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    color: #fff;
+    float: right;
+}
+.aftBtns{
+    background-color: #137983;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    color: #fff;
+    float: right;
+}
+
+
+
+
+.appointments_gripper{
+   width: 80%;
+   margin: 0 auto;
+   margin-top: 7vh;
+}
+.appointments_gripper .head{
+  font-size: 20px;
+  color: #22a6b3;
+  margin-bottom: 3vh;
+}
+
+.appointments_data{
+    position: relative;
+    background-color: #fff;
+    width: 350px;
+    border: 1px solid #e7e7e9;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.flexCol{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+.appointments_data h3{
+    font-size: 15px;
+    font-weight: 600;
+    color: #22a6b3;
+    margin-bottom: 15px;
+}
+.appointments_data p{
+    font-size: 15px;
+    font-weight: 500;
+    color: #6f6f6f;
+}
+.topTags{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    flex-direction: row;
+    column-gap: 10px;
+}
