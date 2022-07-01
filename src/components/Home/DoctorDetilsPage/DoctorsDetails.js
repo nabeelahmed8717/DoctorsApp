@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import classes from "./DoctorDetails.module.css";
 import {
-  BrowserRouter as Router,
-  generatePath,
-  Switch,
-  Route,
-  useHistory,
+  BrowserRouter,
   useParams,
   Link,
 } from "react-router-dom";
@@ -15,12 +11,46 @@ const DoctorsDetails = (props) => {
   const { userid } = useParams();
 
   const [ShowBooknow, setShowBooknow] = useState(false);
+  const [totalPendingAppointments, setTotalPendingAppointments] = useState("");
+  const [totalDoneAppointments, setTotalDoneAppointments] = useState("");
   const showBookNowHandler = () => {
     setShowBooknow(true);
   };
 
-  console.log(userid);
-
+  const fetchAppointmentData= async() =>{
+    const response = await fetch(
+      "https://doctorsapp-3e36e-default-rtdb.firebaseio.com/Appointment.json"
+    );
+  
+    const data = await response.json();
+  
+    const fetchedData = [];
+    for (const key in data) {
+      fetchedData.push({
+        id: key,
+        disease: data[key].disease,
+        userName: data[key].userName,
+        doctor: data[key].doctor,
+        doctorEmail: data[key].doctorEmail,
+        patientEmail: data[key].patientEmail,
+        userName: data[key].userName,
+        appoinment_status:data[key].appointment_status,
+        doctor_Id:data[key].doctor_Id
+      });
+    }
+    const appointmentStatusCount = fetchedData.filter(
+      (count) =>count.doctor_Id===userid && count.appoinment_status === "pending"
+    );
+    const appointmentDoneStatusCount = fetchedData.filter(
+      (count) => count.doctor_Id===userid && count.appoinment_status === "Done"
+    );
+    setTotalPendingAppointments(appointmentStatusCount.length);
+    setTotalDoneAppointments(appointmentDoneStatusCount.length)
+  };
+  
+useEffect(()=>{
+  fetchAppointmentData();
+})
 
 
 
@@ -32,6 +62,7 @@ const DoctorsDetails = (props) => {
     <>
       {filtered.map((doctor) => {
         return (
+
           <div className={classes.doctorDetailsCard} key={doctor.id}>
             <div className={classes.docImage}>
               <img src={doctor.image} alt="" />
@@ -54,8 +85,15 @@ const DoctorsDetails = (props) => {
                   <p>
                     Speciality: <span>{doctor.speciality}</span>
                   </p>
+
                   <h4>
                     Fee : <span>{doctor.feeCharges} $</span>
+                  </h4>
+                  <h4>
+                    Total Earnings : <span>{Number(totalDoneAppointments)*Number(doctor.feeCharges)} $</span>
+                  </h4>
+                  <h4>
+                    Total Pending Appointments : <span>{totalPendingAppointments} </span>
                   </h4>
                 </>
               )}

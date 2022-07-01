@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import classes from "./Home.module.css";
 
 const DoctorCards = (props) => {
-  console.log(props.doctorsData);
+  // console.log(props.doctorsData);
   const navigate = useNavigate();
 
   const handleProceed = (userid) => {

@@ -4,7 +4,7 @@ import classes from './Home.module.css'
 
 const Home = ({doctorsData}) => {
 
-  console.log(doctorsData)
+  // console.log(doctorsData)
 
   return (
 
