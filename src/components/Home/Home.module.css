@@ -120,6 +120,15 @@ button{
 }
 
 
+.flex{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-bottom: 5vh;
+}
+.flex p{
+}
+
 
 
 .appointments_gripper{

@@ -53,7 +53,7 @@ const ShowAllAppointments = () => {
     );
   
     setData(fetchedData);
-    
+    setTotalDoneAppointments(appointmentDoneStatusCount.length)
     setTotalAppointments(fetchedData.length);
     setTotalPendingAppointments(appointmentStatusCount.length);
   }
@@ -93,19 +93,21 @@ const ShowAllAppointments = () => {
                 <p>
                   Patient's Email : <span> {item.patientEmail} </span>
                 </p>
+                <p>
+                  Appointment Status: <span> {item.appoinment_status} </span>
+                </p>
                 <br />
                 <hr />
                 <p>
                   Doctor Name : <span> {item.doctor} </span>
                 </p>
-                <p>
-                  Appointment Status: <span> {item.appoinment_status} </span>
-                </p>
+                
 
               
             
                 {item.appoinment_status  === 'pending' &&  <button
                   type="button"
+                  className={classes.aftBtns}
                   onClick={()=>updateStatus(item.id)}
                 >
                   Done

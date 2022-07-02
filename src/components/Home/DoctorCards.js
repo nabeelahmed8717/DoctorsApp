@@ -10,8 +10,13 @@ const DoctorCards = (props) => {
     userid && navigate(generatePath("/DoctorDetails/:userid", { userid }));
   };
 
+  const childSpecialist = props.doctorsData.filter((count) => count.speciality.trim().toLowerCase() === 'children doctor' )
+  const heartSpecialist = props.doctorsData.filter((count) => count.speciality.trim().toLowerCase() === 'heart doctor' )
+  
+
   return (
     <React.Fragment>
+      <div className={classes.flex}><p>Children Specialist : <span>{childSpecialist.length}</span></p> || <p>Heart Specialist : <span>{heartSpecialist.length}</span></p></div>
       {props.doctorsData?.map((item) => {
         return (
           <div className={classes.Doctor_card} key={item.id}>

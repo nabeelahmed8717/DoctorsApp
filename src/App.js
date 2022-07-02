@@ -59,7 +59,7 @@ function App() {
       id: "D6",
       name: "Isobel Adlam",
       age: "44",
-      speciality: "Children Doctor",
+      speciality: "Heart Doctor",
       email: "Isobel@mail.com",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE6sNDBcs0-yGS8eDXBf5LXduWLM7rSL_W9Q&usqp=CAU",
       feeCharges: "60",

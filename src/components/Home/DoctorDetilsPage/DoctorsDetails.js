@@ -52,7 +52,7 @@ useEffect(()=>{
   fetchAppointmentData();
 })
 
-
+ 
 
   const filtered = props.doctorsData.filter((doctor) => {
     return doctor.id === userid;
